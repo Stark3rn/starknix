@@ -1,26 +1,19 @@
 { config, pkgs, ... }:
-
 {
   services.xserver.enable = true;
-
   services.openssh.enable = true;
-
   services.xserver.windowManager.bspwm.enable = true;
 
-  services.xserver.displayManager.lightdm.enable = true;
+  # Display manager (syntaxe non dépréciée)
+  services.displayManager.lightdm.enable = true;
 
-  #services.picom = {
-  #  enable = true;
-  #  backend = "glx";
-  #  settings = {
-  #    shadow = false;
-  #    frame-opacity = 0.0;
-  #  };
-  #};
+  # sxhkd lancé automatiquement
+  services.xserver.windowManager.bspwm.sxhkd.configFile = "/etc/nixos/dotfiles/sxhkd/sxhkdrc";
 
   services.xserver.xkb.layout = "fr";
-
   security.rtkit.enable = true;
+
+  networking.hostName = "starknix";
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -31,7 +24,7 @@
 
   environment.systemPackages = with pkgs; [
     kitty
-    picom
+    picom      # retiré du service commenté, gardé ici uniquement
     polybar
     rofi
     firefox
