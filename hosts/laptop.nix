@@ -5,7 +5,7 @@
   services.xserver.windowManager.bspwm.enable = true;
 
   # Display manager (syntaxe non dépréciée)
-  services.displayManager.lightdm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
 
   # sxhkd lancé automatiquement
   services.xserver.windowManager.bspwm.sxhkd.configFile = "/etc/nixos/dotfiles/sxhkd/sxhkdrc";
@@ -41,6 +41,7 @@
     rofimoji
     htop
     fastfetch
+    git
   ];
 
   users.users.stark = {
