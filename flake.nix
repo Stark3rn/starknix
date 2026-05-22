@@ -3,11 +3,9 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-      stateVersion = "25.11";
     };
   };
 
@@ -18,19 +16,15 @@
     nixosConfigurations.starknix =
       nixpkgs.lib.nixosSystem {
         inherit system;
-
         modules = [
           ./hosts/laptop.nix
-	  ./hardware-configuration.nix
-
+          ./hardware-configuration.nix
           home-manager.nixosModules.home-manager
-
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
             home-manager.users.stark = {
-	      imports = [
+              imports = [
                 ./home/bspwm.nix
                 ./home/polybar.nix
               ];
