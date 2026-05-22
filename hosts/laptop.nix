@@ -55,6 +55,4 @@
     extraGroups = [ "wheel" ];
     initialPassword = "changeme";
   };
-
-  system.stateVersion = "25.11";
 }
