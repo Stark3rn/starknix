@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+bspc config border_width 2
+bspc config window_gap 12
+bspc config split_ratio 0.52
+bspc config focus_follows_pointer true
+
+bspc monitor -d 1 2 3 4 5
+
+export DISPLAY=:0
+export XAUTHORITY=$HOME/.Xauthority
+
+picom &
+~/.config/polybar/launch.sh &
+dunst &
+copyq &
+~/.fehbg &

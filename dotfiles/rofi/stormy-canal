@@ -1,0 +1,143 @@
+* {
+    bg0:     #1a1814f0;   /* fond principal — translucide */
+    bg1:     #242018f0;   /* fond entrée / éléments */
+    bg2:     #2e2a24;     /* bordures, séparateurs     */
+    fg0:     #c8b89a;     /* texte principal — ocre    */
+    fg1:     #6b6257;     /* texte muted               */
+    accent:  #8fa88c;     /* vert canal — sélection    */
+    blue:    #7a8fa8;     /* bleu orageux — alt        */
+    warn:    #a87d4a;     /* ambre — urgent            */
+    urgent:  #8a4a3c;     /* rouge brique              */
+
+    background-color:   transparent;
+    text-color:         #c8b89a;
+    border-color:       #2e2a24;
+}
+
+window {
+    background-color:   #1a1814f0;
+    border:             1px;
+    border-color:       #2e2a24;
+    border-radius:      6px;
+    width:              480px;
+    padding:            0;
+}
+
+mainbox {
+    background-color:   transparent;
+    children:           [ inputbar, listview ];
+    spacing:            0;
+}
+
+/* SEARCHBAR */
+
+inputbar {
+    background-color:   #242018f0;
+    border:             0 0 1px 0;
+    border-color:       #2e2a24;
+    padding:            10px 14px;
+    spacing:            8px;
+    children:           [ prompt, entry ];
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         #8fa88c;
+    font:               "JetBrainsMono Nerd Font 10";
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         #c8b89a;
+    placeholder:        "rechercher…";
+    placeholder-color:  #6b6257;
+    font:               "JetBrainsMono Nerd Font 10";
+    cursor:             text;
+}
+
+/* LIST */
+
+listview {
+    background-color:   transparent;
+    padding:            6px 0;
+    lines:              8;
+    columns:            1;
+    spacing:            0;
+    scrollbar:          false;
+}
+
+element {
+    background-color:   transparent;
+    padding:            7px 14px;
+    spacing:            8px;
+    border-radius:      0;
+    children:           [ element-icon, element-text ];
+}
+
+element normal normal {
+    background-color:   transparent;
+    text-color:         #c8b89a;
+}
+
+element normal urgent {
+    background-color:   transparent;
+    text-color:         #a87d4a;
+}
+
+element normal active {
+    background-color:   transparent;
+    text-color:         #7a8fa8;
+}
+
+element selected normal {
+    background-color:   #8fa88c18;
+    text-color:         #8fa88c;
+    border:             0 0 0 2px;
+    border-color:       #8fa88c;
+}
+
+element selected urgent {
+    background-color:   #a87d4a18;
+    text-color:         #a87d4a;
+    border:             0 0 0 2px;
+    border-color:       #a87d4a;
+}
+
+element selected active {
+    background-color:   #7a8fa818;
+    text-color:         #7a8fa8;
+    border:             0 0 0 2px;
+    border-color:       #7a8fa8;
+}
+
+element alternate normal {
+    background-color:   transparent;
+    text-color:         #c8b89a;
+}
+
+element-icon {
+    background-color:   transparent;
+    size:               16px;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    font:               "JetBrainsMono Nerd Font 10";
+    highlight:          bold #8fa88c;
+}
+
+/* Message (mode: dmenu, etc.) */
+
+message {
+    background-color:   #242018f0;
+    border:             1px 0 0 0;
+    border-color:       #2e2a24;
+    padding:            6px 14px;
+}
+
+textbox {
+    background-color:   transparent;
+    text-color:         #6b6257;
+    font:               "JetBrainsMono Nerd Font 9";
+}

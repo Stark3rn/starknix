@@ -1,0 +1,114 @@
+# apps
+super + t
+    kitty
+
+super + q
+    bspc node -c
+
+super + e
+    thunar
+
+super + f
+    firefox
+
+super + r
+    rofi -show drun
+
+
+# changing selected tile
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# swap tiles
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+# chage tiles mode
+super + shift + f
+    bspc node -t fullscreen
+
+super + shift + space
+    bspc node -t floating
+
+super + ctrl + f
+    bspc node -t tiled
+
+super + p
+    bspc node -t pseudo_tiled
+
+# switch desktops
+super + ampersand
+    bspc desktop -f 1
+
+super + eacute
+    bspc desktop -f 2
+
+super + quotedbl
+    bspc desktop -f 3
+
+super + apostrophe
+    bspc desktop -f 4
+
+super + parenleft
+    bspc desktop -f 5
+
+super + Tab
+    bspc desktop -f next
+
+super + shift + Tab
+    bspc desktop -f prev
+
+# send tile to desktop
+super + shift + ampersand
+    bspc node -d 1
+
+super + shift + eacute
+    bspc node -d 2
+
+super + shift + quotedbl
+    bspc node -d 3
+
+super + shift + apostrophe
+    bspc node -d 4
+
+super + shift + parenleft
+    bspc node -d 5
+
+# rectangular screenshot
+super + shift + s
+    flameshot gui
+
+# regular screenshot
+Print
+    flameshot full -c
+
+# GUI screenshot
+shift + Print
+    flameshot gui
+
+# Volume manager
+XF86AudioRaiseVolume
+    pamixer -i 5
+
+XF86AudioLowerVolume
+    pamixer -d 5
+
+XF86AudioMute
+    pamixer -t
+
+# Brightness manager
+XF86MonBrightnessUp
+    brightnessctl set +10%
+
+XF86MonBrightnessDown
+    brightnessctl set 10%-
+
+
+# Emoji picker
+super + semicolon
+    rofimoji
+
+# clipboard
+super + v
+    copyq show
+
