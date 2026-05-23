@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, lib, ... }:
 {
   home.file.".config/polybar/config.ini".source =
     config.lib.file.mkOutOfStoreSymlink
@@ -16,4 +15,8 @@
   home.file.".config/polybar/powermenu.sh".source =
     config.lib.file.mkOutOfStoreSymlink
       "/etc/nixos/dotfiles/polybar/powermenu.sh";
+
+  home.file."Pictures".source =
+    config.lib.file.mkOutOfStoreSymlink
+      "/etc/nixos/dotfiles/Pictures";
 }
